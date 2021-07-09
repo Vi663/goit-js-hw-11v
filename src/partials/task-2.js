@@ -10,10 +10,10 @@ const toggleUserState = (allUsers, userName) => {
     const updatedUsers = allUsers.map(user =>
       user.name === userName ? { ...user, active: !user.active } : user,
     );
-    // return updatedUsers;
+    return updatedUsers;
   })
 };
-// console.log(updatedUsers);
+//console.log(updatedUsers);
 const logger = updatedUsers => console.table(updatedUsers);
 
 /*
