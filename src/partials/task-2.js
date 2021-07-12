@@ -7,15 +7,12 @@ const users = [
 
 const toggleUserState = (allUsers, userName) => {
   return new Promise((resolve) => {
-    if (user.name === userName) {
-      updatedUsers = allUsers.map((user) => !user.active === user.active);
-    } else {
-      updatedUsers = allUsers.map((user) => user);
-    };
+    const updatedUsers = allUsers.map(user =>
+    user.name === userName ? { ...user, active: !user.active } : user
+  );
     resolve(updatedUsers);
   });
 };
-console.log(updatedUsers);
 const logger = updatedUsers => console.table(updatedUsers);
 
 /*
@@ -28,6 +25,6 @@ const logger = updatedUsers => console.table(updatedUsers);
  * Повинно працювати так
  */
 toggleUserState(users, 'Mango').then(logger);
-// toggleUserState(users, 'Poly').then(logger);
-// toggleUserState(users, 'Ajax').then(logger);
-// toggleUserState(users, 'Lux').then(logger);
+toggleUserState(users, 'Poly').then(logger);
+toggleUserState(users, 'Ajax').then(logger);
+toggleUserState(users, 'Lux').then(logger);
