@@ -1,4 +1,3 @@
-import Swal from 'sweetalert2';
 const dateInput = document.getElementById('date-selector');
 const startBtn = document.querySelector('[data-start]');
 const daysContainer = document.querySelector('[data-days]');
